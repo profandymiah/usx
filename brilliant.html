@@ -1,0 +1,263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>USx: BRILLIANT Festival</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600;700;800&display=swap">
+<style>
+/* Layout: poster-style hero with a giant X mark, then a two-column brief (role on the left, logistics card on the right) and a full-width sign-up band. */
+:root{
+  --paper:#f2f4f3; --card:#ffffff; --ink:#111a17; --soft:#4d5a55; --line:#d4dbd8;
+  --x:#b8235a; --x-ink:#ffffff; --x-wash:#f6e2ea; --leaf:#1f6b52; --wa:#1d7a4a;
+  --display:"Replica Pro", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body:"Replica Pro", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1513; --card:#17201d; --ink:#edf2ef; --soft:#a5b2ad; --line:#2a3632;
+  --x:#f0628f; --x-ink:#1a0710; --x-wash:#33161f; --leaf:#6fd1a8; --wa:#4fd18a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1513; --card:#17201d; --ink:#edf2ef; --soft:#a5b2ad; --line:#2a3632;
+  --x:#f0628f; --x-ink:#1a0710; --x-wash:#33161f; --leaf:#6fd1a8; --wa:#4fd18a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 var(--body)}
+.w{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em}
+.eyebrow{font:600 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:20px;flex-wrap:wrap}
+.mark{font:800 22px var(--display);letter-spacing:-.03em}
+.mark b{color:var(--x)}
+.top .eyebrow a{text-decoration:none;border-bottom:1px solid var(--line)}
+
+.hero{position:relative;padding-block:32px 56px;overflow:hidden}
+.hero .bigx{position:absolute;right:-4%;top:-10%;font:800 clamp(280px,46vw,560px)/0.8 var(--display);color:var(--x-wash);pointer-events:none;user-select:none;z-index:0}
+.hero .in{position:relative;z-index:1;max-width:760px}
+.hero h1{font-size:clamp(40px,7vw,84px);font-weight:800;line-height:.98;letter-spacing:-.03em;margin:14px 0 20px}
+.hero h1 em{font-style:normal;color:var(--x)}
+.hero p.lede{font-size:clamp(18px,2.2vw,22px);max-width:56ch;color:var(--soft);margin:0 0 28px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.fact span{color:var(--soft);font-weight:500;margin-right:6px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 16px var(--body);text-decoration:none;padding:14px 22px;border-radius:12px;border:2px solid var(--ink)}
+.btn.main{background:var(--x);border-color:var(--x);color:var(--x-ink)}
+.btn:focus-visible{outline:3px solid var(--x);outline-offset:3px}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-2px)}}
+
+.brief{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;padding-block:48px;border-top:1px solid var(--line)}
+.brief>*{min-width:0}
+.block{margin-bottom:40px}
+.block h2{font-size:28px;margin-bottom:16px}
+.tasks{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.tasks li{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.tasks .t{font:800 15px var(--display);color:var(--x);border:2px solid var(--x);border-radius:50%;width:44px;height:44px;display:grid;place-items:center}
+.tasks b{display:block;font-size:18px}
+.tasks span{color:var(--soft)}
+.gets{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.get{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.get b{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
+.get span{color:var(--soft);font-size:15px}
+.suits{font-size:19px;max-width:60ch}
+.watch{display:inline-block;margin-top:12px;font-weight:600;color:var(--leaf)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;position:sticky;top:24px}
+.card h3{font-size:20px;margin-bottom:16px}
+.sched{display:grid;gap:0;margin:0 0 20px}
+.sched div{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sched div:last-child{border-bottom:0}
+.sched dt{font:800 15px var(--display);color:var(--x)}
+.sched dd{margin:0;font-size:15px}
+.sched dd small{display:block;color:var(--soft)}
+.note{background:var(--x-wash);border-radius:12px;padding:14px 16px;font-size:15px}
+.note b{display:block;margin-bottom:2px}
+.places{display:flex;align-items:baseline;gap:10px;margin:18px 0 0}
+.places strong{font:800 40px var(--display);color:var(--x);line-height:1}
+.places span{color:var(--soft);font-size:15px}
+
+.apply{background:var(--ink);color:var(--paper);border-radius:24px;margin-block:8px 32px}
+.apply .in{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;padding:40px clamp(20px,4vw,48px);align-items:center}
+.apply h2{font-size:clamp(28px,4vw,44px);margin-bottom:10px}
+.apply p{color:color-mix(in srgb,var(--paper) 75%,transparent);margin:0 0 20px;max-width:52ch}
+.apply .btn{border-color:var(--paper);color:var(--paper)}
+.apply .btn.main{background:var(--x);border-color:var(--x);color:var(--x-ink)}
+.contact{font-size:15px;color:color-mix(in srgb,var(--paper) 75%,transparent)}
+.contact .addr{color:var(--paper);font-weight:600;user-select:all}
+.copy{background:none;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);color:var(--paper);border-radius:8px;padding:2px 10px;font:600 13px var(--body);cursor:pointer;margin-left:6px}
+
+.wa{display:grid;gap:14px;background:color-mix(in srgb,var(--paper) 8%,transparent);border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:18px;padding:22px}
+.wa h3{font-size:22px}
+.wa p{margin:0;font-size:15px}
+.wa .btn{background:var(--wa);border-color:var(--wa);color:#fff;justify-self:start}
+
+footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .brief{grid-template-columns:1fr;gap:8px}
+  .card{position:static}
+  .apply .in{grid-template-columns:1fr}
+}
+@media (max-width:520px){.gets{grid-template-columns:1fr}.hero .bigx{right:-20%;top:0}}
+
+.wm{height:34px;width:auto;display:block}
+.wm-s{fill:var(--ink)} .wm-x{fill:var(--x)}
+.lockup{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.lockup .div{width:1px;height:28px;background:var(--line)}
+.lockup .ev{font:600 17px var(--display);letter-spacing:-.01em}
+.crest{height:56px;width:auto;display:block}
+.uni{display:flex;align-items:center;gap:16px}
+.uni .eyebrow{text-align:right;line-height:1.5}
+.crest-top{height:52px}
+@media (max-width:520px){.crest-top{height:40px}.uni .eyebrow{display:none}}
+.crest-ink{display:block}.crest-white{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .crest-ink{display:none}:root:not([data-theme="light"]) .crest-white{display:block}}
+:root[data-theme="dark"] .crest-ink{display:none}:root[data-theme="dark"] .crest-white{display:block}
+.coord{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-block:0 32px}
+.coord .mono{width:56px;height:56px;background:var(--x);color:var(--x-ink);display:grid;place-items:center;font:800 30px var(--display)}
+.coord h3{font-size:22px;margin:2px 0 2px}
+.coord .role{color:var(--soft);margin:0 0 14px;font-size:15px}
+.clist{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:15px}
+.clist div{display:flex;align-items:center;gap:8px}
+.clist .k{color:var(--soft);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.clist .v{font-weight:600;user-select:all}
+.cbtn{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:2px 10px;font:600 13px var(--body);cursor:pointer}
+.cbtn:focus-visible{outline:3px solid var(--x);outline-offset:2px}
+.steps2{margin:0 0 22px;padding-left:22px;display:grid;gap:8px;color:color-mix(in srgb,var(--paper) 85%,transparent)}
+.steps2 b{color:var(--paper)}
+.foot-in{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;width:100%}
+@media (max-width:520px){.coord{grid-template-columns:1fr}.wm{height:24px}}
+</style>
+
+<div class="w">
+  <a href="index.html" style="display:inline-block;margin:16px 0 0;font:600 14px var(--font,var(--body,system-ui));color:var(--soft);text-decoration:none">← All USx opportunities</a>
+  <div class="top">
+    <div class="lockup"><svg class="wm" viewBox="0 -715 1743 737" role="img" aria-label="USx"><path class="wm-s" d="M329 18Q192 18 122.5 -49.0Q53 -116 53 -252V-697H210V-270Q210 -222 218.5 -190.0Q227 -158 253.0 -142.0Q279 -126 329 -126Q379 -126 404.5 -142.0Q430 -158 439.0 -189.5Q448 -221 448 -268V-697H605V-257Q605 -118 535.5 -50.0Q466 18 329 18Z M929 15Q813 15 739.0 -45.0Q665 -105 649 -205L802 -243Q813 -183 847.5 -153.5Q882 -124 934 -124Q960 -124 980.5 -132.0Q1001 -140 1013.0 -156.0Q1025 -172 1025 -194Q1025 -214 1013.0 -229.5Q1001 -245 974.0 -259.5Q947 -274 902 -291Q831 -319 786.0 -350.5Q741 -382 720.0 -423.0Q699 -464 699 -517Q699 -575 727.5 -619.5Q756 -664 807.5 -689.5Q859 -715 927 -715Q1000 -715 1056.5 -681.5Q1113 -648 1147 -580L1022 -504Q1003 -539 977.5 -557.5Q952 -576 922 -576Q904 -576 889.0 -569.0Q874 -562 865.0 -549.5Q856 -537 856 -520Q856 -503 866.5 -488.0Q877 -473 905.0 -457.5Q933 -442 983 -423Q1050 -398 1093.5 -368.0Q1137 -338 1159.0 -298.5Q1181 -259 1181 -204Q1181 -140 1149.5 -90.5Q1118 -41 1061.5 -13.0Q1005 15 929 15Z"/><path class="wm-x" d="M1202 0 1364 -249 1202 -493H1378L1465 -346L1552 -493H1728L1564 -249L1728 0H1552L1465 -151L1377 0Z"/></svg><span class="div" aria-hidden="true"></span><span class="ev">BRILLIANT Festival</span></div>
+    <div class="uni">
+      <span class="eyebrow">University of Salford<br>student opportunities</span>
+      <img class="crest crest-top crest-ink" src="uos-logo-landscape-ink.png" alt="University of Salford, Manchester">
+      <img class="crest crest-top crest-white" src="uos-logo-landscape-white.png" alt="University of Salford, Manchester">
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="bigx" aria-hidden="true">x</div>
+    <div class="in">
+      <div class="eyebrow">Opportunity · Content creation · University of Salford students</div>
+      <h1>Create the story of <em>BRILLIANT</em> Festival</h1>
+      <p class="lede">Join the Salford content team at the UK's largest STEAM education festival. Capture the day, edit it fast and get it out across social channels, with published work for your portfolio.</p>
+      <div class="facts">
+        <div class="fact"><span>When</span>Tue 10 November 2026</div>
+        <div class="fact"><span>Where</span>Exhibition Centre Liverpool</div>
+        <div class="fact"><span>Hours</span>8am to around 4pm</div>
+        <div class="fact"><span>Role</span>Content creators</div>
+      </div>
+      <div class="ctas">
+        <a class="btn main" href="https://tally.so/r/bZVylZ?opportunity=brilliant" target="_blank" rel="noopener">Register your interest →</a>
+        <a class="btn" href="https://whatsapp.com/channel/0029VbDaThX8KMqg21XuuW1N" target="_blank" rel="noopener">Join USx on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="coord" aria-labelledby="coordName">
+    <div class="mono" aria-hidden="true">x</div>
+    <div>
+      <div class="eyebrow">Coordinated by</div>
+      <h3 id="coordName">Prof Andy Miah</h3>
+      <p class="role">Professor and Chair of Science Communication &amp; Future Media, University of Salford</p>
+      <div class="clist">
+        <div><span class="k">Email</span><span class="v">a.miah@salford.ac.uk</span><button class="cbtn" type="button" data-copy="a.miah@salford.ac.uk">Copy</button></div>
+        <div><span class="k">Mobile</span><span class="v">07932 605788</span><button class="cbtn" type="button" data-copy="07932605788">Copy</button></div>
+        <div><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/andymiah/" target="_blank" rel="noopener">linkedin.com/in/andymiah</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brief">
+    <div>
+      <div class="block">
+        <div class="eyebrow">The role</div>
+        <h2>What you'll do</h2>
+        <ul class="tasks">
+          <li><span class="t">◎</span><div><b>Capture</b><span>Shoot photos, short videos and quick interviews with speakers, exhibitors, teachers and young people across the festival.</span></div></li>
+          <li><span class="t">✂</span><div><b>Create</b><span>Turn what you capture into reels, stories, carousels and short posts while the day is still happening.</span></div></li>
+          <li><span class="t">↗</span><div><b>Distribute</b><span>Publish and share content across festival and Salford channels, keeping the live feed moving from first doors to final session.</span></div></li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="eyebrow">In return</div>
+        <h2>What you get</h2>
+        <div class="gets">
+          <div class="get"><b>Full festival access</b><span>A day inside the UK's largest STEAM education festival.</span></div>
+          <div class="get"><b>Published work</b><span>Content that goes out on live channels, for your portfolio and CV.</span></div>
+          <div class="get"><b>A media partner role</b><span>Work as part of Salford's team as the festival's Official Media Partner.</span></div>
+          <div class="get"><b>New connections</b><span>Meet educators, STEAM organisations, industry partners and the festival team.</span></div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="eyebrow">Is this for you?</div>
+        <h2>Who it suits</h2>
+        <p class="suits">Students who love making content, from any course: media, journalism, film, photography, marketing, science communication, design or STEM. If you already post, edit or shoot on your phone, you've got the skills. Bring examples of your work if you have them.</p>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card">
+        <h3>Dates and timings</h3>
+        <dl class="sched">
+          <div><dt>8am</dt><dd>Arrive and brief<small>Exhibition Centre Liverpool, Tue 10 Nov</small></dd></div>
+          <div><dt>All day</dt><dd>Capture, create, distribute<small>Across the festival floor and sessions</small></dd></div>
+          <div><dt>c. 4pm</dt><dd>Finish<small>Final posts out, wrap up</small></dd></div>
+                  </dl>
+        <div class="note"><b>This is in Liverpool</b>You'll need to make your own way to Exhibition Centre Liverpool, arriving for 8am ideally. If you can only make part of the day, tell us on the form. You also need to <a href="https://www.brilliantfestival.com/" target="_blank" rel="noopener">register for the festival</a> (free).</div>
+        <div class="places"><strong>Salford</strong><span>is the festival's Official Media Partner. Places are limited, so sign up soon.</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="apply">
+    <div class="in">
+      <div>
+        <div class="eyebrow" style="color:inherit;opacity:.7">How to apply</div>
+        <h2>Two quick steps to take part</h2>
+        <p>Tell us who you are and what kind of content you make. Remember the festival is in Liverpool and you'll need to arrange your own travel there for 8am. Your details are only seen by the coordinator. We'll contact you to confirm your place.</p>
+        <ol class="steps2">
+          <li><b>Sign up to the USx content team</b> so we can confirm your place and brief you.</li>
+          <li><b>Register for the festival itself</b> on the BRILLIANT website. It's free, and you need your own festival registration as well.</li>
+        </ol>
+        <div class="ctas" style="margin-bottom:20px">
+          <a class="btn main" href="https://tally.so/r/bZVylZ?opportunity=brilliant" target="_blank" rel="noopener">1. Join the content team →</a>
+          <a class="btn" href="https://www.brilliantfestival.com/" target="_blank" rel="noopener">2. Register for BRILLIANT ↗</a>
+        </div>
+        <div class="contact">Questions? Contact Prof Andy Miah, details below.</div>
+      </div>
+      <div class="wa">
+        <div class="eyebrow" style="color:inherit;opacity:.7">Don't miss the next one</div>
+        <h3>Join the USx WhatsApp channel</h3>
+        <p>Volunteering, festivals, media and research opportunities for University of Salford students, posted as soon as they open.</p>
+        <a class="btn" href="https://whatsapp.com/channel/0029VbDaThX8KMqg21XuuW1N" target="_blank" rel="noopener">Follow the channel</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-in">
+      <div>
+        <img class="crest crest-ink" src="uos-logo-landscape-ink.png" alt="University of Salford, Manchester">
+        <img class="crest crest-white" src="uos-logo-landscape-white.png" alt="University of Salford, Manchester">
+      </div>
+      <div style="text-align:right;display:grid;gap:4px">
+        <span>USx, the University of Salford's student opportunities programme · School of Science, Engineering and Environment</span>
+        <span>BRILLIANT is the UK's largest STEAM education festival. The University of Salford is its Official Media Partner.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+document.addEventListener("click",async e=>{
+  const b=e.target.closest("[data-copy]");if(!b)return;
+  const val=b.dataset.copy,label=b.textContent;
+  try{await navigator.clipboard.writeText(val);b.textContent="Copied"}
+  catch(err){const v=b.previousElementSibling;const r=document.createRange();r.selectNodeContents(v);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent="Selected"}
+  setTimeout(()=>b.textContent=label,2000);
+});
+</script>
+</body></html>
