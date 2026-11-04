@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600;700;800&display=swap">
 <style>
-/* Layout: poster-style hero with a giant X mark, then a two-column brief (role on the left, logistics card on the right) and a full-width sign-up band. Matches the BRILLIANT call-out. */
+/* Layout: cross-branded poster hero (USx magenta with the BEYOND logo), a three-day programme, a dark partner band, then the sign-up band. Matches the BRILLIANT call-out. */
 :root{
   --paper:#f2f4f3; --card:#ffffff; --ink:#111a17; --soft:#4d5a55; --line:#d4dbd8;
   --x:#b8235a; --x-ink:#ffffff; --x-wash:#f6e2ea; --leaf:#1f6b52; --wa:#1d7a4a;
@@ -27,29 +27,51 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.
 .wm{height:34px;width:auto;display:block}
 .wm-s{fill:var(--ink)} .wm-x{fill:var(--x)}
 .lockup{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.lockup .div{width:1px;height:28px;background:var(--line)}
-.lockup .ev{font:600 17px var(--display);letter-spacing:-.01em}
+.lockup .x{font:800 22px var(--display);color:var(--x)}
+.bey{height:30px;width:auto;display:block}
 .crest{height:52px;width:auto;display:block}
 .crest-ink{display:block}.crest-white{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .crest-ink{display:none}:root:not([data-theme="light"]) .crest-white{display:block}}
 :root[data-theme="dark"] .crest-ink{display:none}:root[data-theme="dark"] .crest-white{display:block}
-@media (max-width:520px){.crest{height:40px}.lockup .ev{font-size:15px}}
+@media (max-width:520px){.crest{height:40px}.bey{height:24px}.wm{height:28px}}
 
-.hero{position:relative;padding-block:32px 56px;overflow:hidden}
-.hero .bigx{position:absolute;right:-4%;top:-10%;font:800 clamp(280px,46vw,560px)/0.8 var(--display);color:var(--x-wash);pointer-events:none;user-select:none;z-index:0}
-.hero .in{position:relative;z-index:1;max-width:760px}
+/* Cross-brand hero: USx magenta field, BEYOND logo in white, USx and University marks beside it */
+.hero{position:relative;background:var(--x);color:var(--x-ink);border-radius:24px;overflow:hidden;margin-top:8px}
+.hero .bigx{position:absolute;right:-3%;top:-16%;font:800 clamp(280px,46vw,560px)/0.8 var(--display);color:color-mix(in srgb,var(--x-ink) 12%,transparent);pointer-events:none;user-select:none}
+.hero .in{position:relative;z-index:1;padding:clamp(28px,5vw,56px);max-width:820px}
+.hero .partners{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.hero .partners .x{font:800 26px var(--display)}
+.hero .partners .uos{height:34px;width:auto;display:block}
+.hero .partners .uos-w{display:block}
+.hero .bey-hero{height:clamp(44px,8vw,78px);width:auto;display:block;margin-bottom:6px}
+.hero .eyebrow{color:var(--x-ink);opacity:.9}
 .hero h1{font-size:clamp(40px,7vw,84px);font-weight:800;line-height:.98;letter-spacing:-.03em;margin:14px 0 20px}
-.hero h1 em{font-style:normal;color:var(--x)}
-.hero p.lede{font-size:clamp(18px,2.2vw,22px);max-width:56ch;color:var(--soft);margin:0 0 28px}
+.hero p.lede{font-size:clamp(18px,2.2vw,22px);max-width:56ch;opacity:.95;margin:0 0 28px}
 .facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.fact{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
-.fact span{color:var(--soft);font-weight:500;margin-right:6px}
+.fact{background:color-mix(in srgb,var(--x-ink) 14%,transparent);border:1px solid color-mix(in srgb,var(--x-ink) 35%,transparent);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.fact span{opacity:.8;font-weight:500;margin-right:6px}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;font:600 16px var(--body);text-decoration:none;padding:14px 22px;border-radius:12px;border:2px solid var(--ink)}
 .btn.main{background:var(--x);border-color:var(--x);color:var(--x-ink)}
 .btn.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.light{background:var(--x-ink);border-color:var(--x-ink);color:var(--x)}
 .btn:focus-visible{outline:3px solid var(--x);outline-offset:3px}
 @media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-2px)}}
+.hero .btn{border-color:var(--x-ink)}
+.hero .btn.main{background:var(--x-ink);border-color:var(--x-ink);color:var(--x)}
+.hero .btn.wa{background:transparent;color:var(--x-ink);border-color:var(--x-ink)}
+
+/* Three days */
+.days{padding-block:48px;border-top:1px solid var(--line)}
+.days h2{font-size:clamp(28px,4vw,40px);margin:4px 0 22px}
+.daygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:10px;align-content:start}
+.day .date{font:800 15px var(--display);color:var(--x)}
+.day h3{font-size:24px;line-height:1.1}
+.day .theme{font-weight:600;font-size:15px;color:var(--leaf)}
+.day p{margin:0;color:var(--soft);font-size:15px}
+.day .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.day .tags span{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
 
 .brief{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;padding-block:48px;border-top:1px solid var(--line)}
 .brief>*{min-width:0}
@@ -65,33 +87,54 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.
 .get b{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
 .get span{color:var(--soft);font-size:15px}
 .suits{font-size:19px;max-width:60ch}
+.tix{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.tix li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.tix b{display:block;font-size:17px}
+.tix span{color:var(--soft);font-size:15px}
+.tix a{color:var(--x);font-weight:700}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;position:sticky;top:24px}
 .card h3{font-size:20px;margin-bottom:16px}
 .sched{display:grid;gap:0;margin:0 0 20px}
-.sched div{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sched div{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
 .sched div:last-child{border-bottom:0}
 .sched dt{font:800 15px var(--display);color:var(--x)}
 .sched dd{margin:0;font-size:15px}
 .sched dd small{display:block;color:var(--soft)}
-.note{background:var(--x-wash);border-radius:12px;padding:14px 16px;font-size:15px}
+.note{background:var(--x-wash);color:var(--ink);border-radius:12px;padding:14px 16px;font-size:15px}
 .note b{display:block;margin-bottom:2px}
 .places{display:flex;align-items:baseline;gap:10px;margin:18px 0 0}
 .places strong{font:800 40px var(--display);color:var(--x);line-height:1}
 .places span{color:var(--soft);font-size:15px}
 
-.apply{background:var(--ink);color:var(--paper);border-radius:24px;margin-block:8px 32px}
+/* Speakers and partners */
+.spk{padding-block:48px;border-top:1px solid var(--line)}
+.spk h2{font-size:clamp(28px,4vw,40px);margin:4px 0 14px}
+.spk p{max-width:64ch;color:var(--soft);margin:0 0 18px}
+.names{display:flex;flex-wrap:wrap;gap:8px}
+.names span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:600;font-size:15px}
+
+.partners-band{background:var(--ink);color:var(--paper);border-radius:24px;padding:clamp(24px,4vw,40px);display:grid;gap:22px;margin-block:8px 0}
+.partners-band .eyebrow{color:inherit;opacity:.7}
+.partners-band h2{font-size:clamp(24px,3.4vw,32px)}
+.plogos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px 28px;align-items:center}
+.plogos img{width:100%;max-height:70px;object-fit:contain;justify-self:start}
+.plogos .pill{background:#ffffff;border-radius:12px;padding:10px 14px;display:grid;place-items:center;justify-self:start}
+.plogos .pill img{max-height:56px}
+.plogos small{display:block;color:color-mix(in srgb,var(--paper) 65%,transparent);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+
+.apply{background:var(--x);color:var(--x-ink);border-radius:24px;margin-block:32px 32px}
 .apply .in{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;padding:40px clamp(20px,4vw,48px);align-items:center}
 .apply h2{font-size:clamp(28px,4vw,44px);margin-bottom:10px}
-.apply p{color:color-mix(in srgb,var(--paper) 75%,transparent);margin:0 0 20px;max-width:52ch}
-.apply .btn{border-color:var(--paper);color:var(--paper)}
-.apply .btn.main{background:var(--x);border-color:var(--x);color:var(--x-ink)}
-.contact{font-size:15px;color:color-mix(in srgb,var(--paper) 75%,transparent)}
-.wa-card{display:grid;gap:14px;background:color-mix(in srgb,var(--paper) 8%,transparent);border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:18px;padding:22px}
+.apply p{opacity:.95;margin:0 0 20px;max-width:52ch}
+.apply .btn{border-color:var(--x-ink);color:var(--x-ink)}
+.apply .btn.main{background:var(--x-ink);border-color:var(--x-ink);color:var(--x)}
+.apply .contact{font-size:15px;opacity:.9}
+.steps2{margin:0 0 22px;padding-left:22px;display:grid;gap:8px}
+.wa-card{display:grid;gap:14px;background:color-mix(in srgb,var(--x-ink) 12%,transparent);border:1px solid color-mix(in srgb,var(--x-ink) 35%,transparent);border-radius:18px;padding:22px}
 .wa-card h3{font-size:22px}
 .wa-card p{margin:0;font-size:15px}
 .wa-card .btn{background:var(--wa);border-color:var(--wa);color:#fff;justify-self:start}
-.steps2{margin:0 0 22px;padding-left:22px;display:grid;gap:8px;color:color-mix(in srgb,var(--paper) 85%,transparent)}
-.steps2 b{color:var(--paper)}
+
 .coord{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-block:0 32px}
 .coord .mono{width:56px;height:56px;background:var(--x);color:var(--x-ink);display:grid;place-items:center;font:800 30px var(--display)}
 .coord h3{font-size:22px;margin:2px 0 2px}
@@ -105,19 +148,25 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.
 
 footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .foot-in{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;width:100%}
+.foot-in .x{font:800 20px var(--display);color:var(--x);margin:0 8px}
 
-@media (max-width:860px){
+@media (max-width:900px){
+  .daygrid{grid-template-columns:1fr}
   .brief{grid-template-columns:1fr;gap:8px}
   .card{position:static}
   .apply .in{grid-template-columns:1fr}
 }
-@media (max-width:520px){.gets{grid-template-columns:1fr}.coord{grid-template-columns:1fr}.hero .bigx{right:-20%;top:0}.wm{height:28px}}
+@media (max-width:520px){.gets{grid-template-columns:1fr}.coord{grid-template-columns:1fr}.hero .bigx{right:-20%;top:0}}
 </style>
 
 <div class="w">
   <a href="index.html" style="display:inline-block;margin:16px 0 0;font:600 14px var(--body);color:var(--soft);text-decoration:none">← All USx opportunities</a>
   <div class="top">
-    <div class="lockup"><svg class="wm" viewBox="0 -715 1743 737" role="img" aria-label="USx"><path class="wm-s" d="M329 18Q192 18 122.5 -49.0Q53 -116 53 -252V-697H210V-270Q210 -222 218.5 -190.0Q227 -158 253.0 -142.0Q279 -126 329 -126Q379 -126 404.5 -142.0Q430 -158 439.0 -189.5Q448 -221 448 -268V-697H605V-257Q605 -118 535.5 -50.0Q466 18 329 18Z M929 15Q813 15 739.0 -45.0Q665 -105 649 -205L802 -243Q813 -183 847.5 -153.5Q882 -124 934 -124Q960 -124 980.5 -132.0Q1001 -140 1013.0 -156.0Q1025 -172 1025 -194Q1025 -214 1013.0 -229.5Q1001 -245 974.0 -259.5Q947 -274 902 -291Q831 -319 786.0 -350.5Q741 -382 720.0 -423.0Q699 -464 699 -517Q699 -575 727.5 -619.5Q756 -664 807.5 -689.5Q859 -715 927 -715Q1000 -715 1056.5 -681.5Q1113 -648 1147 -580L1022 -504Q1003 -539 977.5 -557.5Q952 -576 922 -576Q904 -576 889.0 -569.0Q874 -562 865.0 -549.5Q856 -537 856 -520Q856 -503 866.5 -488.0Q877 -473 905.0 -457.5Q933 -442 983 -423Q1050 -398 1093.5 -368.0Q1137 -338 1159.0 -298.5Q1181 -259 1181 -204Q1181 -140 1149.5 -90.5Q1118 -41 1061.5 -13.0Q1005 15 929 15Z"/><path class="wm-x" d="M1202 0 1364 -249 1202 -493H1378L1465 -346L1552 -493H1728L1564 -249L1728 0H1552L1465 -151L1377 0Z"/></svg><span class="div" aria-hidden="true"></span><span class="ev">BEYOND Conference</span></div>
+    <div class="lockup">
+      <svg class="wm" viewBox="0 -715 1743 737" role="img" aria-label="USx"><path class="wm-s" d="M329 18Q192 18 122.5 -49.0Q53 -116 53 -252V-697H210V-270Q210 -222 218.5 -190.0Q227 -158 253.0 -142.0Q279 -126 329 -126Q379 -126 404.5 -142.0Q430 -158 439.0 -189.5Q448 -221 448 -268V-697H605V-257Q605 -118 535.5 -50.0Q466 18 329 18Z M929 15Q813 15 739.0 -45.0Q665 -105 649 -205L802 -243Q813 -183 847.5 -153.5Q882 -124 934 -124Q960 -124 980.5 -132.0Q1001 -140 1013.0 -156.0Q1025 -172 1025 -194Q1025 -214 1013.0 -229.5Q1001 -245 974.0 -259.5Q947 -274 902 -291Q831 -319 786.0 -350.5Q741 -382 720.0 -423.0Q699 -464 699 -517Q699 -575 727.5 -619.5Q756 -664 807.5 -689.5Q859 -715 927 -715Q1000 -715 1056.5 -681.5Q1113 -648 1147 -580L1022 -504Q1003 -539 977.5 -557.5Q952 -576 922 -576Q904 -576 889.0 -569.0Q874 -562 865.0 -549.5Q856 -537 856 -520Q856 -503 866.5 -488.0Q877 -473 905.0 -457.5Q933 -442 983 -423Q1050 -398 1093.5 -368.0Q1137 -338 1159.0 -298.5Q1181 -259 1181 -204Q1181 -140 1149.5 -90.5Q1118 -41 1061.5 -13.0Q1005 15 929 15Z"/><path class="wm-x" d="M1202 0 1364 -249 1202 -493H1378L1465 -346L1552 -493H1728L1564 -249L1728 0H1552L1465 -151L1377 0Z"/></svg>
+      <span class="x" aria-hidden="true">×</span>
+      <img class="bey" src="assets/beyond-logo-ink.png" alt="BEYOND Conference">
+    </div>
     <div>
       <img class="crest crest-ink" src="uos-logo-landscape-ink.png" alt="University of Salford, Manchester">
       <img class="crest crest-white" src="uos-logo-landscape-white.png" alt="University of Salford, Manchester">
@@ -127,18 +176,48 @@ footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;just
   <section class="hero">
     <div class="bigx" aria-hidden="true">x</div>
     <div class="in">
-      <div class="eyebrow">Opportunity · Research and innovation · University of Salford students</div>
-      <h1>Experience <em>BEYOND</em> the curriculum</h1>
-      <p class="lede">BEYOND is a conference on research and innovation in the creative industries. USx is gathering interest from University of Salford students now, so we can tell you about roles and places as they are confirmed.</p>
+      <div class="partners">
+        <span class="eyebrow" style="color:inherit">USx at</span>
+        <img class="bey-hero" src="assets/beyond-logo-white.png" alt="BEYOND Conference">
+      </div>
+      <div class="eyebrow">Opportunity · Research, innovation and creative industries · University of Salford students</div>
+      <h1>Experience <em style="font-style:normal;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:8px">BEYOND</em> the curriculum</h1>
+      <p class="lede">BEYOND is the creative industries conference for research, innovation and business, held at MediaCity in Salford. USx is gathering University of Salford student interest now, so we can tell you about roles and places as they are confirmed.</p>
       <div class="facts">
-        <div class="fact"><span>When</span>23–25 Nov 2026</div>
-        <div class="fact"><span>Where</span>Details to follow</div>
-        <div class="fact"><span>Places</span>To be confirmed</div>
+        <div class="fact"><span>When</span>Mon 23 to Wed 25 Nov 2026</div>
+        <div class="fact"><span>Where</span>MediaCity, Salford</div>
+        <div class="fact"><span>Entry</span>Free sessions open to all</div>
       </div>
       <div class="ctas">
         <a class="btn main" href="https://tally.so/r/bZVylZ?opportunity=beyond" target="_blank" rel="noopener">Register your interest →</a>
-        <a class="btn" href="https://whatsapp.com/channel/0029VbDaThX8KMqg21XuuW1N" target="_blank" rel="noopener">Follow on WhatsApp</a>
+        <a class="btn wa" href="https://whatsapp.com/channel/0029VbDaThX8KMqg21XuuW1N" target="_blank" rel="noopener">Follow on WhatsApp</a>
       </div>
+    </div>
+  </section>
+
+  <section class="days" aria-labelledby="daysTitle">
+    <div class="eyebrow">The programme</div>
+    <h2 id="daysTitle">Three days, two themes</h2>
+    <div class="daygrid">
+      <article class="day">
+        <div class="date">Mon 23 Nov · 09:00–17:00</div>
+        <h3>Visit programme</h3>
+        <p>A visit programme for international delegates.</p>
+      </article>
+      <article class="day">
+        <div class="date">Tue 24 Nov · 09:00–17:00</div>
+        <h3>Create, Discover &amp; Innovate</h3>
+        <div class="theme">The Experience theme</div>
+        <p>Screen, XR and immersive media, AI and creative practice, gaming, VFX, live performance and music.</p>
+        <div class="tags"><span>Keynotes</span><span>Panels</span><span>Workshops</span></div>
+      </article>
+      <article class="day">
+        <div class="date">Wed 25 Nov · 09:00–17:00</div>
+        <h3>Build, Fund &amp; Scale</h3>
+        <div class="theme">The Growth theme</div>
+        <p>CreaTech, capital and funding models, creative clusters, IP and copyright, and global markets.</p>
+        <div class="tags"><span>Short talks</span><span>Showcases</span><span>Networking</span></div>
+      </article>
     </div>
   </section>
 
@@ -160,27 +239,37 @@ footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;just
     <div>
       <div class="block">
         <div class="eyebrow">About the conference</div>
-        <h2>What BEYOND brings</h2>
+        <h2>What happens at BEYOND</h2>
         <ul class="tasks">
-          <li><span class="t">◎</span><div><b>Research and practice</b><span>Speaker sessions, fringe events and showcases on research and innovation across the creative industries.</span></div></li>
-          <li><span class="t">✂</span><div><b>Hands-on innovation</b><span>Previous editions have included an Immersive Futures Lab with XR prototypes and a Creative R&amp;D Expo of recent research.</span></div></li>
-          <li><span class="t">↗</span><div><b>Young talent</b><span>Previous editions have run Emerging Innovators Awards for young people in creative research, with free tickets and networking.</span></div></li>
+          <li><span class="t">◎</span><div><b>Keynotes, panels and workshops</b><span>Talks and sessions across the creative industries, from practice to policy.</span></div></li>
+          <li><span class="t">✂</span><div><b>Live and immersive</b><span>Free open-access sessions, live performances and immersive installations across the festival.</span></div></li>
+          <li><span class="t">↗</span><div><b>Emerging Innovators</b><span>A programme showcasing UK creative innovators aged 18 to 29.</span></div></li>
         </ul>
       </div>
       <div class="block">
         <div class="eyebrow">In return</div>
         <h2>What students can gain</h2>
         <div class="gets">
-          <div class="get"><b>Conference access</b><span>A look at current research and innovation in the creative industries.</span></div>
+          <div class="get"><b>Conference access</b><span>See current research and innovation in the creative industries.</span></div>
           <div class="get"><b>Experience for your CV</b><span>Involvement that builds practical experience in a professional setting.</span></div>
-          <div class="get"><b>New connections</b><span>Meet researchers, creative professionals and industry partners.</span></div>
+          <div class="get"><b>New connections</b><span>Meet investors, founders, policymakers and creative professionals.</span></div>
           <div class="get"><b>First to hear</b><span>Register now and we will contact you as roles and places are confirmed.</span></div>
         </div>
       </div>
       <div class="block">
+        <div class="eyebrow">Tickets</div>
+        <h2>How to attend</h2>
+        <ul class="tix">
+          <li><b>Free festival sessions</b><span>Free, open-access sessions, live performances and installations. <a href="https://beyondconference.org/festival" target="_blank" rel="noopener">Pre-register for free →</a></span></li>
+          <li><b>Single Day tickets</b><span>Limited numbers for the conference days. <a href="https://beyondconference.org/tickets" target="_blank" rel="noopener">See ticket options →</a></span></li>
+          <li><b>Pay it Forward</b><span>Fully funded tickets offered through the conference. <a href="https://beyondconference.org/tickets" target="_blank" rel="noopener">Find out more →</a></span></li>
+        </ul>
+        <p class="suits" style="font-size:15px;margin-top:14px;color:var(--soft)">The conference site lists no student-specific pricing. Ask us on the sign-up form if you need help choosing.</p>
+      </div>
+      <div class="block">
         <div class="eyebrow">Is this for you?</div>
         <h2>Who it suits</h2>
-        <p class="suits">Students from any course who are curious about research, innovation, creative technology and the creative industries. You don't need prior experience. Tell us what interests you on the sign-up form.</p>
+        <p class="suits">Students from any course who are curious about research, innovation, creative technology and the creative industries, including media, design, film, games, music and science communication. You don't need prior experience. Tell us what interests you on the sign-up form.</p>
       </div>
     </div>
 
@@ -188,32 +277,58 @@ footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;just
       <div class="card">
         <h3>Dates and timings</h3>
         <dl class="sched">
-          <div><dt>Mon 23 Nov</dt><dd>Conference days begin<small>Times and venue to follow</small></dd></div>
-          <div><dt>24–25 Nov</dt><dd>Sessions and showcases<small>Times and venue to follow</small></dd></div>
+          <div><dt>Mon 23 Nov</dt><dd>Visit programme<small>09:00–17:00 · international delegates</small></dd></div>
+          <div><dt>Tue 24 Nov</dt><dd>Create, Discover &amp; Innovate<small>09:00–17:00 · Experience theme</small></dd></div>
+          <div><dt>Wed 25 Nov</dt><dd>Build, Fund &amp; Scale<small>09:00–17:00 · Growth theme</small></dd></div>
         </dl>
-        <div class="note"><b>Details to follow</b>The programme, venue and any student roles are still being confirmed. Register your interest and we will contact you as they are announced.</div>
+        <div class="note"><b>Venue: MediaCity, Salford</b>Detailed room and street information will follow as it is confirmed.</div>
         <div class="places"><strong>Register</strong><span>so USx can contact you first when places open.</span></div>
       </div>
     </aside>
   </section>
 
+  <section class="spk" aria-labelledby="spkTitle">
+    <div class="eyebrow">Speakers</div>
+    <h2 id="spkTitle">100+ speakers, with more to be announced</h2>
+    <p>The programme includes speakers from the creative industries, research and government, from organisations such as Aardman, Ars Electronica, Arup, the British Council, Creative UK, The Design Council and Merlin Entertainments.</p>
+    <div class="names">
+      <span>Emma Hardie, Aardman</span><span>Oonagh Murphy, Arts Council England</span><span>Hooman Samani, UAL</span><span>Deepa Mann-Kler, Neon</span><span>Lucy Jarjoura, Wake The Tiger</span><span>Marta Foresti, LAGO Collective</span><span>Nihal Arthanayake</span>
+    </div>
+  </section>
+
+  <section class="partners-band" aria-labelledby="partTitle">
+    <div>
+      <div class="eyebrow">Partners</div>
+      <h2 id="partTitle">Supported by</h2>
+    </div>
+    <div class="plogos">
+      <div><div class="pill"><img src="assets/partner-ukri-ahrc.png" alt="UKRI AHRC"></div><small>Programme partner</small></div>
+      <div><img src="assets/partner-british-council-white.png" alt="British Council"><small>Founding partner</small></div>
+      <div><img src="assets/partner-salford-white.png" alt="University of Salford"><small>Festival partner</small></div>
+      <div><img src="assets/partner-mediacity-white.png" alt="MediaCity"><small>Festival partner</small></div>
+      <div><img src="assets/partner-salford-city-council-white.png" alt="Salford City Council"><small>Festival partner</small></div>
+      <div><img src="assets/partner-gm-growth-hub-white.png" alt="GM Business Growth Hub"><small>Festival partner</small></div>
+    </div>
+  </section>
+
   <section class="apply">
     <div class="in">
       <div>
-        <div class="eyebrow" style="color:inherit;opacity:.7">How to apply</div>
+        <div class="eyebrow" style="color:inherit;opacity:.8">How to apply</div>
         <h2>Register your interest</h2>
-        <p>Tell us who you are and what interests you. We'll contact you with the roles, times and venue once they are confirmed.</p>
+        <p>Tell us who you are and what interests you. We'll contact you with roles, times and any student places once they are confirmed.</p>
         <ol class="steps2">
           <li><b>Register your interest</b> on the USx form so we can contact you directly.</li>
-          <li><b>Follow the USx WhatsApp channel</b> for alerts when places open.</li>
+          <li><b>Pre-register for the free sessions</b> on the BEYOND site if you want to attend.</li>
         </ol>
         <div class="ctas" style="margin-bottom:20px">
           <a class="btn main" href="https://tally.so/r/bZVylZ?opportunity=beyond" target="_blank" rel="noopener">1. Register your interest →</a>
+          <a class="btn" href="https://beyondconference.org/festival" target="_blank" rel="noopener">2. Pre-register ↗</a>
         </div>
         <div class="contact">Questions? Contact Prof Andy Miah, details above.</div>
       </div>
       <div class="wa-card">
-        <div class="eyebrow" style="color:inherit;opacity:.7">Don't miss the next one</div>
+        <div class="eyebrow" style="color:inherit;opacity:.8">Don't miss the next one</div>
         <h3>Join the USx WhatsApp channel</h3>
         <p>Volunteering, festivals, media and research opportunities for University of Salford students, posted as soon as they open.</p>
         <a class="btn" href="https://whatsapp.com/channel/0029VbDaThX8KMqg21XuuW1N" target="_blank" rel="noopener">Follow the channel</a>
@@ -223,12 +338,13 @@ footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;just
 
   <footer>
     <div class="foot-in">
-      <div>
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
         <img class="crest crest-ink" src="uos-logo-landscape-ink.png" alt="University of Salford, Manchester">
         <img class="crest crest-white" src="uos-logo-landscape-white.png" alt="University of Salford, Manchester">
       </div>
       <div style="text-align:right;display:grid;gap:4px">
         <span>USx, the University of Salford's student opportunities programme · Faculty of Science, Engineering and Environment</span>
+        <span>BEYOND is the creative industries conference at MediaCity, Salford, 23–25 November 2026. <a href="https://beyondconference.org/" target="_blank" rel="noopener">beyondconference.org</a></span>
       </div>
     </div>
   </footer>
