@@ -135,6 +135,8 @@ footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;just
 .theme{background:var(--x-wash);color:var(--ink);border-radius:999px;padding:6px 14px;font-weight:600;font-size:15px}
 .include{margin:0 0 22px;padding-left:22px;display:grid;gap:6px;color:color-mix(in srgb,var(--paper) 85%,transparent)}
 .include b{color:var(--paper)}
+.formframe{background:#ffffff;border:1px solid var(--line);border-radius:18px;padding:12px clamp(8px,2vw,24px);max-width:820px}
+.formframe iframe{display:block;width:100%;border:0}
 .soon{display:inline-block;font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase;border:1px solid color-mix(in srgb,var(--paper) 40%,transparent);border-radius:999px;padding:4px 12px;margin-bottom:14px}
 </style>
 
@@ -254,21 +256,25 @@ footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;just
     </aside>
   </section>
 
-  <section class="apply" id="offer">
+  <section class="offer" id="offer" aria-labelledby="offerTitle" style="padding-block:48px;border-top:1px solid var(--line)">
+    <div class="eyebrow">How to take part</div>
+    <h2 id="offerTitle" style="font-size:clamp(28px,4vw,40px);margin:6px 0 10px">Offer a demo</h2>
+    <p style="max-width:62ch;margin:0 0 22px;color:var(--soft)">Takes about three minutes. Tell us what you'd bring, what space and power it needs, and when you can be there. Andy will be in touch to confirm a slot.</p>
+    <div class="formframe">
+      <iframe data-tally-src="https://tally.so/embed/DqKpdq?alignLeft=1&amp;hideTitle=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="2200" frameborder="0" marginheight="0" marginwidth="0" title="Offer a demo for the Salford stand at BRILLIANT"></iframe>
+    </div>
+    <p style="margin-top:12px;font-size:15px"><a href="https://tally.so/r/DqKpdq" target="_blank" rel="noopener">Open the form in a new tab →</a></p>
+  </section>
+
+  <section class="apply">
     <div class="in">
       <div>
-        <div class="eyebrow" style="color:inherit;opacity:.7">How to take part</div>
-        <h2>Offer a demo</h2>
-        <span class="soon">Sign-up form coming soon</span>
-        <p>For now, email Andy with a few lines about your demo. Please include:</p>
-        <ol class="include">
-          <li><b>Your name, school or team</b>, and who else would come</li>
-          <li><b>The demo</b>, and what visitors will do with it</li>
-          <li><b>Space it needs</b>: handheld, tabletop, a whole table or floor</li>
-          <li><b>Power and internet</b>: battery, power bank or mains; offline, hotspot or Wi-Fi</li>
-          <li><b>When you can be there</b>: morning, lunchtime or afternoon</li>
-          <li><b>Anything to flag</b>: headsets, safety points, students joining you</li>
-        </ol>
+        <div class="eyebrow" style="color:inherit;opacity:.7">Questions?</div>
+        <h2>Talk to Andy first</h2>
+        <p>Not sure your demo fits, or want to bring something bigger? Get in touch before you fill in the form.</p>
+        <div class="ctas" style="margin-bottom:20px">
+          <a class="btn main" href="https://tally.so/r/DqKpdq" target="_blank" rel="noopener">Offer a demo →</a>
+        </div>
         <div class="contact">Email <span class="addr">a.miah@salford.ac.uk</span><button class="copy" type="button" data-copy="a.miah@salford.ac.uk">Copy</button></div>
       </div>
       <div class="wa">
@@ -294,6 +300,9 @@ footer{padding-block:8px 40px;color:var(--soft);font-size:14px;display:flex;just
   </footer>
 </div>
 
+<script>
+var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}
+</script>
 <script>
 document.addEventListener("click",async e=>{
   const b=e.target.closest("[data-copy]");if(!b)return;
